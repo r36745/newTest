@@ -187,7 +187,35 @@ public class Main extends Activity {
             public void onClick(View view) {
                 String collection = String.valueOf(namesArrayList);
 
-                textViewCollection.setText(collection);
+                
+
+
+
+
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(Main.this);
+                    alertDialog.setTitle("Alert Window");
+                    alertDialog.setIcon(R.drawable.ic_launcher);
+                    alertDialog.setMessage("Team Requested");
+                    final TextView teamName = new TextView(Main.this);
+                    teamName.setText(collection);
+                    alertDialog.setView(teamName);
+                    alertDialog.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            return;
+
+                        }
+                    });
+
+                    alertDialog.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            return;
+                        }
+                    });
+                    alertDialog.show();
+                    textViewIndex.setText(collection);
+
             }
         });
 
